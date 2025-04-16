@@ -1,16 +1,24 @@
 {
-  "routes": [
-    {
-      "src": "/question/(.*)",
-      "dest": "/question/index.html"
-    },
-    {
-      "src": "/.well-known/(.*)",
-      "dest": "/.well-known/$1"
-    },
-    {
-      "src": "/apple-app-site-association",
-      "dest": "/apple-app-site-association"
-    }
-  ]
-} 
+    "buildOutput": "pages",
+    "rewrites": [
+        {
+            "source": "/.well-known/:path*",
+            "destination": "/public/.well-known/:path*"
+        },
+        {
+            "source": "/apple-app-site-association",
+            "destination": "/public/apple-app-site-association"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                }
+            ]
+        }
+    ]
+}
