@@ -6,46 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numberloo Question</title>
     <script>
-        // Get question ID from URL
-        function getQuestionId() {
-            const pathParts = window.location.pathname.split('/');
-            return pathParts[pathParts.length - 1];
-        }
-
-        // When page loads
         window.onload = function () {
-            const questionId = getQuestionId();
-            if (questionId) {
-                // Check if we're on dev domain
-                const isDev = window.location.hostname === 'dev.numberloo.com';
-                const playStoreUrl = isDev
-                    ? 'https://play.google.com/store/apps/details?id=com.numberloo.dev'
-                    : 'https://play.google.com/store/apps/details?id=com.numberloo';
+            // Check if we're on dev domain
+            const isDev = window.location.hostname === 'dev.numberloo.com';
+            const playStoreUrl = isDev
+                ? 'https://play.google.com/store/apps/details?id=com.numberloo.dev'
+                : 'https://play.google.com/store/apps/details?id=com.numberloo';
 
-                // Detect Android
-                const isAndroid = /Android/i.test(navigator.userAgent);
+            // Get question ID from URL
+            const pathParts = window.location.pathname.split('/');
+            const questionId = pathParts[pathParts.length - 1];
 
-                if (isAndroid) {
-                    // Get timestamp
-                    const startTime = Date.now();
+            // Detect Android
+            const isAndroid = /Android/i.test(navigator.userAgent);
 
-                    // Try to open app
-                    window.location.href = `numberloo://question/${questionId}`;
+            if (isAndroid) {
+                // Try to open app
+                window.location.href = `numberloo://question/${questionId}`;
 
-                    // Check after 500ms
-                    setTimeout(function () {
-                        // If page is still visible (app didn't open)
-                        if (!document.hidden) {
-                            window.location.href = playStoreUrl;
-                        }
-                    }, 1000);
-                } else {
-                    // If not Android, stay on web page
-                    const webUrl = isDev
-                        ? `https://dev.numberloo.com/question/${questionId}`
-                        : `https://numberloo.com/question/${questionId}`;
-                    document.getElementById('message').innerText = 'Bu link Android cihazlar içindir.';
-                }
+                // If app doesn't open within 1 second, redirect to Play Store
+                setTimeout(function () {
+                    if (!document.hidden) {
+                        window.location.href = playStoreUrl;
+                    }
+                }, 1000);
+            } else {
+                // If not Android, show message
+                document.getElementById('message').innerText = 'Bu link Android cihazlar içindir.';
             }
         }
     </script>
