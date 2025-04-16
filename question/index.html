@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numberloo Question</title>
+    <script src="/public/js/deep-link.js"></script>
+    <script>
+        // Get question ID from URL
+        function getQuestionId() {
+            const pathParts = window.location.pathname.split('/');
+            return pathParts[pathParts.length - 1];
+        }
+
+        // When page loads
+        window.onload = function() {
+            const questionId = getQuestionId();
+            if (questionId) {
+                tryOpenApp(questionId);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center; padding: 20px;">
+        <h1>Numberloo</h1>
+        <p>Yönlendiriliyorsunuz...</p>
+    </div>
+</body>
+</html>
