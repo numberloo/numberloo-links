@@ -1,29 +1,6 @@
 {
+    "version": 2,
+    "public": true,
     "cleanUrls": true,
-    "trailingSlash": false,
-    "rewrites": [
-        {
-            "source": "/question/:path*",
-            "destination": "/question/index.html"
-        },
-        {
-            "source": "/.well-known/:path*",
-            "destination": "/public/.well-known/:path*"
-        },
-        {
-            "source": "/apple-app-site-association",
-            "destination": "/public/apple-app-site-association"
-        }
-    ],
-    "headers": [
-        {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                }
-            ]
-        }
-    ]
+    "trailingSlash": false
 }
