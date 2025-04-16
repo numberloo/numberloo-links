@@ -9,7 +9,15 @@
         window.onload = function () {
             // Get question ID from URL
             const pathParts = window.location.pathname.split('/');
-            const questionId = pathParts[pathParts.length - 1];
+            const questionIndex = pathParts.indexOf('question');
+            const questionId = questionIndex !== -1 && pathParts[questionIndex + 1]
+                ? pathParts[questionIndex + 1]
+                : null;
+
+            if (!questionId) {
+                document.getElementById('message').innerText = 'Geçersiz soru linki';
+                return;
+            }
 
             // Check if we're on dev domain
             const isDev = window.location.hostname === 'dev.numberloo.com';
