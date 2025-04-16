@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "src": "/question/(.*)",
+      "dest": "/question/index.html"
+    },
+    {
+      "src": "/.well-known/(.*)",
+      "dest": "/.well-known/$1"
+    },
+    {
+      "src": "/apple-app-site-association",
+      "dest": "/apple-app-site-association"
+    }
+  ]
+} 
