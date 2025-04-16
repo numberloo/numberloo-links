@@ -2,23 +2,7 @@
   "rewrites": [
     {
       "source": "/.well-known/assetlinks.json",
-      "has": [
-        {
-          "type": "host",
-          "value": "numberloo.com"
-        }
-      ],
       "destination": "/.well-known/production/assetlinks.json"
-    },
-    {
-      "source": "/.well-known/assetlinks.json",
-      "has": [
-        {
-          "type": "host",
-          "value": "dev.numberloo.com"
-        }
-      ],
-      "destination": "/.well-known/development/assetlinks.json"
     }
   ],
   "headers": [
