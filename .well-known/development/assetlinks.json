@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.numberloo.dev",
+    "sha256_cert_fingerprints": [
+      "8D:72:19:C3:DD:FF:7F:C7:4B:7D:27:AE:7D:79:08:5E:BC:77:B6:D5"
+    ]
+  }
+}]
