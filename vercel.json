@@ -2,12 +2,12 @@
   "rewrites": [
     {
       "source": "/.well-known/assetlinks.json",
-      "destination": "/.well-known/production/assetlinks.json"
+      "destination": "/assetlinks.json"
     }
   ],
   "headers": [
     {
-      "source": "/.well-known/assetlinks.json",
+      "source": "/assetlinks.json",
       "headers": [
         {
           "key": "Content-Type",
