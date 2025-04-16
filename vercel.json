@@ -2,25 +2,28 @@
   "rewrites": [
     {
       "source": "/.well-known/assetlinks.json",
+      "has": [
+        {
+          "type": "host",
+          "value": "numberloo.com"
+        }
+      ],
       "destination": "/.well-known/production/assetlinks.json"
     },
     {
-      "source": "/dev/.well-known/assetlinks.json",
+      "source": "/.well-known/assetlinks.json",
+      "has": [
+        {
+          "type": "host",
+          "value": "dev.numberloo.com"
+        }
+      ],
       "destination": "/.well-known/development/assetlinks.json"
     }
   ],
   "headers": [
     {
       "source": "/.well-known/assetlinks.json",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/json"
-        }
-      ]
-    },
-    {
-      "source": "/dev/.well-known/assetlinks.json",
       "headers": [
         {
           "key": "Content-Type",
