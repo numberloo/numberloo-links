@@ -1,10 +1,12 @@
-   {
-     "headers": [
-       {
-         "source": "/apple-app-site-association",
-         "headers": [
-           { "key": "Content-Type", "value": "application/json" }
-         ]
-       }
-     ]
-   }
+{
+  "rewrites": [
+    {
+      "source": "/.well-known/assetlinks.json",
+      "destination": "/.well-known/production/assetlinks.json"
+    },
+    {
+      "source": "/dev/.well-known/assetlinks.json",
+      "destination": "/.well-known/development/assetlinks.json"
+    }
+  ]
+}
