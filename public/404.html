@@ -24,12 +24,14 @@
             const playStoreUrl = isDev
                 ? 'https://play.google.com/store/apps/details?id=com.numberloo.dev'
                 : 'https://play.google.com/store/apps/details?id=com.numberloo';
+            const appStoreUrl = 'https://apps.apple.com/tr/app/numberloo/id6740729976';
 
-            // Detect Android
+            // Detect platform
             const isAndroid = /Android/i.test(navigator.userAgent);
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
             if (isAndroid) {
-                // Try to open app
+                // Try to open Android app
                 window.location.href = `numberloo://question/${questionId}`;
 
                 // If app doesn't open within 1.5 seconds, redirect to Play Store
@@ -38,9 +40,15 @@
                         window.location.href = playStoreUrl;
                     }
                 }, 1500);
+            } else if (isIOS) {
+                setTimeout(function () {
+                    if (!document.hidden) {
+                        window.location.href = appStoreUrl;
+                    }
+                }, 1500);
             } else {
-                // If not Android, show message
-                document.getElementById('message').innerText = 'Bu link Android cihazlar içindir.';
+                // If not mobile device, show message
+                document.getElementById('message').innerText = 'Bu link mobil cihazlar içindir.';
             }
         }
     </script>
