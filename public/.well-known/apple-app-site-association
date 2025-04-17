@@ -1,35 +1,11 @@
 {
-    "applinks": {
-        "apps": [],
-        "details": [
-            {
-                "appID": "KQC6QPR2X9.com.numberloo",
-                "components": [
-                    {
-                        "#": "no_universal_links",
-                        "exclude": true,
-                        "comment": "Exclude files and data URLs"
-                    },
-                    {
-                        "/": "/question/*",
-                        "comment": "Matches any URL whose path starts with /question/"
-                    }
-                ]
-            },
-            {
-                "appID": "KQC6QPR2X9.com.numberloo.dev",
-                "components": [
-                    {
-                        "#": "no_universal_links",
-                        "exclude": true,
-                        "comment": "Exclude files and data URLs"
-                    },
-                    {
-                        "/": "/question/*",
-                        "comment": "Matches any URL whose path starts with /question/"
-                    }
-                ]
-            }
-        ]
-    }
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "KQC6QPR2X9.com.numberloo.dev",
+        "paths": [ "/question/*" ]
+      }
+    ]
+  }
 }
