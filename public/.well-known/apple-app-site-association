@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "KQC6QPR2X9.com.numberloo.dev",
+        "appID": "KQC6QPR2X9.com.example.numberloo.dev",
         "paths": [ "/question/*" ]
       }
     ]
