@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "KQC6QPR2X9.com.numberloo.dev",
+        "paths": [ "/question/*" ]
+      }
+    ]
+  }
+}
