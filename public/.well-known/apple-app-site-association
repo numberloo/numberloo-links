@@ -4,10 +4,12 @@
         "details": [
             {
                 "appID": "KQC6QPR2X9.com.numberloo",
-                "paths": [
-                    "/question/*"
-                ],
                 "components": [
+                    {
+                        "#": "no_universal_links",
+                        "exclude": true,
+                        "comment": "Exclude files and data URLs"
+                    },
                     {
                         "/": "/question/*",
                         "comment": "Matches any URL whose path starts with /question/"
@@ -16,21 +18,18 @@
             },
             {
                 "appID": "KQC6QPR2X9.com.numberloo.dev",
-                "paths": [
-                    "/question/*"
-                ],
                 "components": [
+                    {
+                        "#": "no_universal_links",
+                        "exclude": true,
+                        "comment": "Exclude files and data URLs"
+                    },
                     {
                         "/": "/question/*",
                         "comment": "Matches any URL whose path starts with /question/"
                     }
                 ]
             }
-        ]
-    },
-    "webcredentials": {
-        "apps": [
-            "KQC6QPR2X9.com.numberloo.dev"
         ]
     }
 }
