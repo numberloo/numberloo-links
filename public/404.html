@@ -41,19 +41,7 @@
                     }
                 }, 1500);
             } else if (isIOS) {
-                // First try Universal Links
-                fetch(`https://numberloo.com/question/${questionId}`).then(response => {
-                    // If fetch fails, it means the app handled the Universal Link
-                    console.log('App opened successfully');
-                }).catch(() => {
-                    // If fetch succeeds, it means the app is not installed
-                    window.location.href = appStoreUrl;
-                });
-
-                // Fallback to URL scheme after a short delay
-                setTimeout(function () {
-                    window.location.href = `numberloo://question/${questionId}`;
-                }, 100);
+                document.getElementById('message').innerText = 'Bu link mobil cihazlar içindir.';
             } else {
                 // If not mobile device, show message
                 document.getElementById('message').innerText = 'Bu link mobil cihazlar içindir.';
