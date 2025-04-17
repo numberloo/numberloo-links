@@ -41,7 +41,11 @@
                     }
                 }, 1500);
             } else if (isIOS) {
-                document.getElementById('message').innerText = 'Bu link mobil cihazlar içindir.';
+                setTimeout(function () {
+                    if (!document.hidden) {
+                        window.location.href = appStoreUrl;
+                    }
+                }, 1500);
             } else {
                 // If not mobile device, show message
                 document.getElementById('message').innerText = 'Bu link mobil cihazlar içindir.';
