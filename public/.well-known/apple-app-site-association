@@ -3,6 +3,10 @@
     "apps": [],
     "details": [
       {
+        "appID": "KQC6QPR2X9.com.example.numberloo",
+        "paths": [ "/question/*" ]
+      },
+      {
         "appID": "KQC6QPR2X9.com.example.numberloo.dev",
         "paths": [ "/question/*" ]
       }
